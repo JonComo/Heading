@@ -7,8 +7,15 @@
 //
 
 #import "HDViewController.h"
+#import "HDTracker.h"
+#import "HDTrackerView.h"
 
 @interface HDViewController ()
+{
+    HDTracker *tracker;
+    __weak IBOutlet HDTrackerView *trackerView;
+    __weak IBOutlet UILabel *labelLocation;
+}
 
 @end
 
@@ -18,6 +25,24 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    tracker = [[HDTracker alloc] init];
+    
+    trackerView.tracker = tracker;
+    
+    [tracker startTrackingWithUpdates:^{
+        labelLocation.text = [NSString stringWithFormat:@"x: %f y:%f", tracker.currentLocation.coordinate.latitude, tracker.currentLocation.coordinate.longitude];
+        [trackerView setNeedsDisplay];
+    }];
+    
+    [trackerView addGestureRecognizer:[[UITapGestureRecognizer alloc] initWithTarget:tracker action:@selector(reset)]];
+}
+
+- (IBAction)slider:(UISlider *)sender
+{
+    trackerView.scale = sender.value;
+    
+    [trackerView setNeedsDisplay];
 }
 
 - (void)didReceiveMemoryWarning

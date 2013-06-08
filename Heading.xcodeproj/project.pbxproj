@@ -18,6 +18,9 @@
 		86502D511762ACA5006455E9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 86502D501762ACA5006455E9 /* Default-568h@2x.png */; };
 		86502D541762ACA5006455E9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86502D521762ACA5006455E9 /* MainStoryboard.storyboard */; };
 		86502D571762ACA5006455E9 /* HDViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86502D561762ACA5006455E9 /* HDViewController.m */; };
+		86502D5F1762ACCE006455E9 /* HDTracker.m in Sources */ = {isa = PBXBuildFile; fileRef = 86502D5E1762ACCE006455E9 /* HDTracker.m */; };
+		86502D611762ACD9006455E9 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86502D601762ACD9006455E9 /* CoreLocation.framework */; };
+		86502D641762B06E006455E9 /* HDTrackerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86502D631762B06E006455E9 /* HDTrackerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +40,11 @@
 		86502D531762ACA5006455E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		86502D551762ACA5006455E9 /* HDViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HDViewController.h; sourceTree = "<group>"; };
 		86502D561762ACA5006455E9 /* HDViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HDViewController.m; sourceTree = "<group>"; };
+		86502D5D1762ACCE006455E9 /* HDTracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDTracker.h; sourceTree = "<group>"; };
+		86502D5E1762ACCE006455E9 /* HDTracker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDTracker.m; sourceTree = "<group>"; };
+		86502D601762ACD9006455E9 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		86502D621762B06E006455E9 /* HDTrackerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HDTrackerView.h; sourceTree = "<group>"; };
+		86502D631762B06E006455E9 /* HDTrackerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HDTrackerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86502D611762ACD9006455E9 /* CoreLocation.framework in Frameworks */,
 				86502D3B1762ACA5006455E9 /* UIKit.framework in Frameworks */,
 				86502D3D1762ACA5006455E9 /* Foundation.framework in Frameworks */,
 				86502D3F1762ACA5006455E9 /* CoreGraphics.framework in Frameworks */,
@@ -73,6 +82,7 @@
 		86502D391762ACA5006455E9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				86502D601762ACD9006455E9 /* CoreLocation.framework */,
 				86502D3A1762ACA5006455E9 /* UIKit.framework */,
 				86502D3C1762ACA5006455E9 /* Foundation.framework */,
 				86502D3E1762ACA5006455E9 /* CoreGraphics.framework */,
@@ -88,6 +98,10 @@
 				86502D521762ACA5006455E9 /* MainStoryboard.storyboard */,
 				86502D551762ACA5006455E9 /* HDViewController.h */,
 				86502D561762ACA5006455E9 /* HDViewController.m */,
+				86502D5D1762ACCE006455E9 /* HDTracker.h */,
+				86502D5E1762ACCE006455E9 /* HDTracker.m */,
+				86502D621762B06E006455E9 /* HDTrackerView.h */,
+				86502D631762B06E006455E9 /* HDTrackerView.m */,
 				86502D411762ACA5006455E9 /* Supporting Files */,
 			);
 			path = Heading;
@@ -177,6 +191,8 @@
 				86502D471762ACA5006455E9 /* main.m in Sources */,
 				86502D4B1762ACA5006455E9 /* HDAppDelegate.m in Sources */,
 				86502D571762ACA5006455E9 /* HDViewController.m in Sources */,
+				86502D5F1762ACCE006455E9 /* HDTracker.m in Sources */,
+				86502D641762B06E006455E9 /* HDTrackerView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

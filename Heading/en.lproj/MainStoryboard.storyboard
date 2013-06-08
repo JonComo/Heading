@@ -1,23 +1,78 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2519" systemVersion="12A206j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1856"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
-        <!--class Prefix:identifier View Controller-->
+        <!--View Controller-->
         <scene sceneID="5">
             <objects>
                 <viewController id="2" customClass="HDViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nD8-ds-UVM" customClass="HDTrackerView">
+                                <subviews>
+                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="2" translatesAutoresizingMaskIntoConstraints="NO" id="MQf-8w-B7A">
+                                        <connections>
+                                            <action selector="slider:" destination="2" eventType="valueChanged" id="dWM-9D-gTg"/>
+                                        </connections>
+                                    </slider>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oo7-vK-2II">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="28" id="wfy-ww-Jfc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="MQf-8w-B7A" firstAttribute="top" secondItem="oo7-vK-2II" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="3Rd-hI-KQk"/>
+                                    <constraint firstItem="MQf-8w-B7A" firstAttribute="leading" secondItem="nD8-ds-UVM" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Cjb-BL-cnS"/>
+                                    <constraint firstAttribute="bottom" secondItem="MQf-8w-B7A" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="GVs-7b-baN"/>
+                                    <constraint firstItem="oo7-vK-2II" firstAttribute="trailing" secondItem="nD8-ds-UVM" secondAttribute="trailing" type="default" id="MQR-kS-oU8"/>
+                                    <constraint firstAttribute="trailing" secondItem="MQf-8w-B7A" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="YUb-q3-rDR"/>
+                                    <constraint firstItem="oo7-vK-2II" firstAttribute="leading" secondItem="nD8-ds-UVM" secondAttribute="leading" type="default" id="lPN-3Y-FVa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nD8-ds-UVM" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="90S-6P-I4e"/>
+                            <constraint firstItem="nD8-ds-UVM" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="9Uh-Dz-vTH"/>
+                            <constraint firstItem="nD8-ds-UVM" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="Wlc-xz-yuK"/>
+                            <constraint firstItem="nD8-ds-UVM" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="wPl-jl-PEQ"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="labelLocation" destination="oo7-vK-2II" id="KqO-5Y-mgk"/>
+                        <outlet property="trackerView" destination="nD8-ds-UVM" id="bi9-RT-FjK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="394" y="188"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="HDTrackerView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HDTrackerView.h"/>
+        </class>
+        <class className="HDViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/HDViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="slider:" candidateClass="UISlider"/>
+                <relationship kind="outlet" name="labelLocation" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="trackerView" candidateClass="HDTrackerView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
